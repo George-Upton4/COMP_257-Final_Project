@@ -18,5 +18,5 @@ player_One_Score: The result for player one's score
 player_Two_Score: The result for player two's score     
 
 [Pseudocode for Brute Force](https://github.com/George-Upton4/COMP_257-Final_Project/blob/main/pseudocodes/Brute%20Force%20Pseudocode)
-[Pseudocode for Greedy Algorithm] (https://github.com/George-Upton4/COMP_257-Final_Project/blob/main/pseudocodes/Greedy%20Algorithm%20Pseudocode)
-[Pseudocode for Dynamic Programming Algorithm] (https://github.com/George-Upton4/COMP_257-Final_Project/blob/main/pseudocodes/Dynamic%20Programming%20Pseudocode)
+[Pseudocode for Greedy Algorithm](https://github.com/George-Upton4/COMP_257-Final_Project/blob/main/pseudocodes/Greedy%20Algorithm%20Pseudocode)
+[Pseudocode for Dynamic Programming Algorithm](https://github.com/George-Upton4/COMP_257-Final_Project/blob/main/pseudocodes/Dynamic%20Programming%20Pseudocode)
