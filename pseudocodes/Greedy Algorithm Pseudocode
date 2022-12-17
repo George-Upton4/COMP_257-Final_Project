@@ -1,1 +1,31 @@
+# Pseudocode for Greedy
+```
+def greedyAlgo(coins):
+    player_One_Score equals 0
+    player_Two_Score equals 0
 
+    # keep track of which player's turn it is
+    player = 1
+  
+    while in coins:
+        # take the maximum value coin
+        if coins[0] greater than coins[-1]:
+            coin equals coins.pop(0)
+        else:
+            coin equals coins.pop(-1)
+        
+        # add the coin to the appropriate player's score
+        if player is 1:
+            add coin to player_One_Score
+        else:
+            add coin to player_Two_Score
+        
+        # switch to the other player's turn
+        player equals (player + 1) % 2
+  
+    return player_One_Score, player_Two_Score
+```
+
+# Time Complexity - Big O Notation: O(n)
+
+The algorithm processes each coin in the input list exactly once, so the running time is directly proportional to the size of the input (i.e. the number of coins). For example, if there are n coins, the algorithm will take O(n) time to run.

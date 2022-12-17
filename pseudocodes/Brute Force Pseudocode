@@ -1,1 +1,23 @@
+# Pseudocode for Brute Force
+```
+def bruteForceAlgo(coins, player):
+    # base case: 
+    if there are no more coins, 
+        return 0
+  
+    # recursive case: 
+    try taking the left-most coin and the right-most coin
+    if player is 1:
+        # player 1's turn: maximize score
+        return max(
+            coins[0] + bruteForceAlgo(coins[1:], (player + 1) % 2),
+            coins[-1] + bruteForceAlgo(coins[:-1], (player + 1) % 2))
+    else:
+        # player 2's turn: minimize score
+        return min(
+            bruteForceAlgo(coins[1:], (player + 1) % 2),
+            bruteForceAlgo(coins[:-1], (player + 1) % 2))
+```
+# Time Complexity - Big O Notation: O(2^n)
 
+In each recursive call, the algorithm makes two more recursive calls, one for each of the two options (taking the left-most or right-most coin). This means that the number of recursive calls grows exponentially with the size of the input (i.e. the number of coins). For example, if there are n coins, the algorithm will make 2^n recursive calls.

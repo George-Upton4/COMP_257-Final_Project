@@ -46,27 +46,35 @@ def greedyAlgo(coins):
 
 # Big O Notation: O(n^2)
 def dynamic_Programming_Algo(coins):
-    player_One_Score = 0
-    player_Two_Score = 0
-    # keep track of which player's turn it is
-    player = 1
-  
-    while coins:
-        # take the maximum value coin
-        if coins[0] > coins[-1]:
-            coin = coins.pop(0)
-        else:
-            coin = coins.pop(-1)
+    # create a dictionary to store the results of subproblems
+    memo = {}
+    
+    # define the recursive function to find the maximum score for a given range of coins
+    def find_max_score(start, end):
+        # base case: if there are no more coins, the maximum score is 0
+        if start > end:
+            return 0
         
-        # add the coin to the appropriate player's score
-        if player == 1:
-            player_1_score += coin
-        else:
-            player_2_score += coin
+        # check if the maximum score for this range of coins has already been calculated
+        if (start, end) in memo:
+            return memo[(start, end)]
         
-        # switch to the other player's turn
-        player = (player + 1) % 2
-  
+        # calculate the maximum score for this range of coins by considering both options for the current player's move
+        score1 = coins[start] + min(find_max_score(start+2, end), find_max_score(start+1, end-1))
+        score2 = coins[end] + min(find_max_score(start+1, end-1), find_max_score(start, end-2))
+        max_score = max(score1, score2)
+        
+        # store the result in the dictionary for future reference
+        memo[(start, end)] = max_score
+        
+        return max_score
+    
+    # call the recursive function to find the maximum score for the entire range of coins
+    player_One_Score = find_max_score(0, len(coins)-1)
+    
+    # player one's score is the maximum score, so player two's score is the sum of all the coins minus player one's score
+    player_Two_Score = sum(coins) - player_One_Score
+    
     return player_One_Score, player_Two_Score
 
 def main():

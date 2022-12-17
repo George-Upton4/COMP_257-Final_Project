@@ -1,1 +1,37 @@
+# Pseudocode for Dynamic Programming
+```
+# create a dictionary to store the results of subproblems
+    memo equals empty dictionary 
+    
+    # define the recursive function to find the maximum score for a given range of coins
+    def find_max_score(start, end):
+        # base case: if there are no more coins, the maximum score is 0
+        if start greater than end:
+            return 0
+        
+        # check if the maximum score for this range of coins has already been calculated
+        if (start, end) is in memo:
+            return memo[(start, end)]
+        
+        # calculate the maximum score for this range of coins by considering both options for the current player's move
+        score1 equals coins[start] + min(find_max_score(start+2, end), find_max_score(start+1, end-1))
+        score2 equals coins[end] + min(find_max_score(start+1, end-1), find_max_score(start, end-2))
+        max_score equals max(score1, score2)
+        
+        # store the result in the dictionary for future reference
+        memo[(start, end)] equals max_score
+        
+        return max_score
+    
+    # call the recursive function to find the maximum score for the entire range of coins
+    player_One_Score equals find_max_score(0, len(coins)-1)
+    
+    # player one's score is the maximum score, so player two's score is the sum of all the coins minus player one's score
+    player_Two_Score equals sum(coins) - player_One_Score
+    
+    return player_One_Score, player_Two_Score
+```
 
+# Time Complexity - Big O Notation: O(n)
+
+The time complexity of this algorithm is O(n), where n is the number of coins. This is because the find_max_score() function is called at most n times, and the time complexity of each call is constant. The use of memoization allows the function to avoid recalculating the maximum score for ranges of coins that have already been considered, which helps to reduce the overall time complexity.

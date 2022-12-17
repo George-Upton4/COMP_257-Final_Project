@@ -10,10 +10,9 @@ optimally, how much money are you guaranteed to win? Meaning, even if your frien
 plays optimally, how much will you win?
 
 **Inputs**      
-coins: The list containing the values for the coins that are generated
+coins: The list containing the values for the coins that are generated      
 player: Int value for the player that is playing first, used for Brute Force Algorithm
 
 **Outputs**     
 player_One_Score: The result for player one's score     
 player_Two_Score: The result for player two's score
-
