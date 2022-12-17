@@ -117,8 +117,8 @@ def bruteForceCases():
     end4 = time.process_time()
     print(f"It took {end4 - start4} seconds to run.")
 
-    # Case 5: 10000000000 random coins
-    coins = random.choices([pennies, nickels, dimes, quarters, half_dollars], k=10000000000)
+    # Case 5: 555555555 random coins
+    coins = random.choices([pennies, nickels, dimes, quarters, half_dollars], k=555555555)
     start5 = time.time()
     bruteForceCases
     end5 = time.time()
@@ -162,8 +162,8 @@ def greedyAlgoCases():
     end4 = time.process_time()
     print(f"It took {end4 - start4} seconds to run.")
 
-    # Case 5: 10000000000 random coins
-    coins = random.choices([pennies, nickels, dimes, quarters, half_dollars], k=10000000000)
+    # Case 5: 555555555 random coins
+    coins = random.choices([pennies, nickels, dimes, quarters, half_dollars], k=555555555)
     start5 = time.time()
     bruteForceCases
     end5 = time.time()
@@ -207,8 +207,8 @@ def dynamicProgrammingAlgoCases():
     end4 = time.process_time()
     print(f"It took {end4 - start4} seconds to run.")
 
-    # Case 5: 10000000000 random coins
-    coins = random.choices([pennies, nickels, dimes, quarters, half_dollars], k=10000000000)
+    # Case 5: 555555555 random coins
+    coins = random.choices([pennies, nickels, dimes, quarters, half_dollars], k=555555555)
     start5 = time.time()
     bruteForceCases
     end5 = time.time()
